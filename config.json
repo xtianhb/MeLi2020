@@ -1,0 +1,96 @@
+{
+  "task":{
+        "task":"train",
+        "model":"model1"
+  },
+  "regex":{
+		"train_input":null,
+		"train_output":null,
+		"predict_input":null,
+		"predict_output":null,
+		"train_size":1000,
+		"predict_size":0,
+		"option1":true,
+		"option2":true
+  },
+  "analyze":{
+		"analyze":null
+  },
+  "models":[{
+    "name":"baseline",
+    "last_score":0.0000,
+    "train": {
+        "epochs":10,
+        "size":10000,
+        "random":true,
+        "iterations":0,
+        "save":true,
+        "state":"t-baseline-00000.sav",
+        "from_last":true
+     },
+    "eval":{
+      "size":1000,
+      "state":"t-baseline-00000.sav",
+      "save":true
+     },
+    "predict":{
+     "size":0,
+     "state":"t-baseline-00000.sav",
+     "save":true,
+     "data":"data.txt"
+     }
+},{
+    "name":"model1",
+    "last_score":0.0000,
+    "train": {
+        "epochs":10,
+        "size":10000,
+        "random":true,
+        "iterations":0,
+        "save":true,
+        "state":"t-model1-00000.sav",
+        "from_last":true
+     },
+    "eval":{
+      "size":1000,
+      "state":"t-model1-00000.sav",
+      "save":true
+     },
+    "predict":{
+     "size":0,
+     "state":"t-model1-00000.sav",
+     "save":true,
+     "data":"data.txt"
+     }
+},
+{
+    "name":"model2",
+    "last_score":0.0000,
+    "train": {
+        "epochs":10,
+        "size":10000,
+        "random":true,
+        "iterations":0,
+        "save":true,
+        "state":"t-model2-00000.sav",
+        "from_last":true
+     },
+    "eval":{
+      "size":1000,
+      "state":"t-model2-00000.sav",
+      "save":true
+     },
+    "predict":{
+     "size":0,
+     "state":"t-model2-00000.sav",
+     "save":true,
+     "data":"data.txt"
+     }
+}],
+"ensemble": {
+  "models":[ ["model1",0.5], ["model2",0.5]],
+  "save":false,
+  "output":"output/output.csv"
+}
+
+ }
